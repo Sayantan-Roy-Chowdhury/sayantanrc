@@ -1,0 +1,220 @@
+underpinnings of the chern class
+relation between linear algebra and topology
+similar relations between moduli spaces and objects
+browder fixed point theorem - lefschetz fixed point theorem
+what kind of simgularitites occur?
+
+
+
+1 reference- Reflections on a cup of coffee
+
+Euler characteristic (image) - 3 dimensional thing where u have to color stuff to indicate 4 dimesions
+has to have same orientation in boundary points where only transversal intersections are allowed- can see no  of max = no of min - morse theory
+self intersection
+vector field(poincare hopf , intersection of vector fields with 0 section , euler classes)
+fixed point theory(Lefschetz, Browder)
+
+
+Morse theory(as vector fields, as euler characteristic as homology theory)
+f - non degenerate function, grad f intersects transversally with zero section
+
+chern classes - Poincare duality - obstruction theory - obstruction to find k independant sections -  link with curvature - integration of chern class=intersection points 
+Can higher chern classes be related to higher intersections???
+
+modules- vector bundles of varying dimensions
+tensor product - product of two vector bundles
+that is fibre is the product of each fibre - for example if the fibre is 0in one case,then the product fibre is 0.
+flat modules - 
+captures if there are sections that becomes 0 in the product 
+non torsion free modules - this contains non zero sections that are zero in an open neighbourhood - eg
+example R/I - this conatins 1 point and 0 evrywhere else- so leads to vanishing sections
+torsion free  example being (x,y) in k(x,y) ) 
+if suddenly dimension increases at one point , then it is 0 everywhere else- Is this true??
+
+
+Sheaf cohomology - atleast over modules- obstruction to find k independent class - example of a C[z](M_{1}) and C[z^{-1}](M_{2}) module whose intersection is a C[z,z^{-1}](M_{12}) module is a sheaf on P1.
+elements of first cohomology = elements of M_{12} that does not come from M_{1} and M_{2}
+Example (M_{1},M_{12} is same, M_{2} = z^{i}C[z^{-i}] = O(i) bundle
+dim(H^{0}) = i+1 i \geq 0 , 0 o.w. 
+dim(H^{1}) = -i-1 i<0 , 0 o.w.
+
+History of homological algbra - Webel (homological algebra  measure holes, intersections, deformations and obstructions for
+many different mathematical objects)
+
+
+deg(g \circ f) = deg (g) deg(f) (Bezout's)
+degree of a map - we are trying to understand how the image looks like - might be weird)
+
+2 ref - Uber Abbidung von manning faltingkent, On continous vector distributions in surfaces - Brower
+winding no of a singular point = how many times the direction of vf turns around if we follow a small loop= look at the map p:S^{1} \to S^{1}. (1st S^{1} is loop around singularity - 2nd S^{1} is the set of all vector directions of the plane(surprisingly similar to the gauss map)- deg of the map
+generalization = deg of map p : X \to S^{n} : f(x) - z / |f(x) - z |
+
+
+
+Guillemin-Pollack
+f:X to Y . Z submani of Y
+Transversality - Im(df_{x}) + T_{y}Z = T_{y}Y
+intersection no of f(X) and Z = I(f,Z)
+
+Some important theorems::::
+If smooth functions g1,g2..gl are independent at each point where they all vanish, then the set of zeroes Z is a submanifold of X with codim l 
+Partial Converse 1 :: If y is a regular value. f^{-1}(y) can be cut out by independant fucntions
+Partial Converse 2 :: Every submanifold Z of Y is locally cut out by independant fucntions
+
+We can consider X has a boundary bdX, Y and Z are boundaryless, transversality = f and bd(f) = f|(bdX) is transversal to Z - f^{-1}(z) = submani with boundary- homotopic transversal maps have same intersections- so if a map f from boundary can be extended to whole manifolds then I(f,Z) = 0 - deg(f) = I(f, {y})
+
+f: bd(D) to R^{n} , F : D to R^{n}, f doesnot touch z, then
+F^{-1}(z) = W(f,z)
+\int f^{*} w =  deg(f) \int w
+(something to do with c_{1}(det E) = c_{1}(E) = deg(E) since generally det(df) finds its way here. So, how similar is this to the Gauss map idea? since there also we see the det(df) ???????
+
+Gauss Bonnet(even dimensional hypersurface. 
+\int curvature = deg(gauss) = euler characteristic / 2.
+
+
+Lef map : f : M \to M such that graph(f) intersects diagonal transversely in M X M (all maps are homotopic to Lef)
+This happens only when graph(df_{x}) doesnot intersect T_{x}(diagonal) = df_{x} doesnt have 1 as eigenvalue = det(df_{x} - I) != 0 .  
+L(f) = no of fixed points of f with multiplicities = intersection points
+If f is homotopic to identity , then L(f) = euler characteristic
+L(f) = \sum_{f(x) =x} L_{x}(f)
+L_{x}(f)
+ = +1 (df_{x} - 1 preserve orientation)
+ = -1( ,, reverse orientation)
+ 
+if x is an isolated fixed point, consider B containing x
+then define L_{x}(f)= deg(F) where F = f(z) - z / |f(z) - z | on bd(B) . this equals the earlier L_{x}(f) if x is a lef point.
+
+
+Poincare Hopf 
+intersection of v.f. with 0 section 
+flow with those vector fields - map is homotopic to identity - fixed points = singularities of vector fields with index same as the Lef map
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Poincaré defined the nth-Betti number as the maximal number of n-dimensional cycles that do not form the
+boundary of an n + 1-dimensional submanifold.
+
+h-Cobordism, Morse theory
+From the vector field ∇f one can construct a complex. The i-degree component is the
+vector space spanned by the singularities with Morse index i and the differential d maps
+each singularity with Morse index i to a sum of all the index i − 1 singularities that can be
+reached by an integral curve of the vector field. Multiple connecting paths contribute each
+with a sign. One of the main results in this revisited version of Morse theory is that the
+homology of this complex equals the simplicial homology of the space. This result tells us
+that the number of critical points of f must be at least equal to the sum of all Betti numbers,
+otherwise the complex could not have the required homology. Likewise we have a lower
+bound on the number of singularities in the vector field ∇f and the number of fixpoints of
+the map exp(t∇f ) : M → M.
+
+
+2 ref - Morse theory for lagrangian intersections , Proof of arnold conjecture for surfaces - floer
+Brower degree = (-1)^{Morse degree}
+Physical interpretation = singular = equilibrium - morse index = how stable? - links with symplectic - energy(hamiltonian) - f = turned intoa Hamiltonian by adding a kinetic energy term - project onto grad (f) hence describes physical models of Morse theory- M into T^{*}M is the maximal subspace where symplectic form w vanishes (Lagrangian subspaces)-fixed points of Hamiltonian v.f. = intersections of Lagrangian spaces ( similar to fixed point theory and intersection of vector field with 0 section kind of idea
+) - If we look at the flowed version of the \phi_{t}(M) ⊂ T^{*}M we see that it intersects M at the points where f is singular, so the Morse complex of (M, f ) is spanned by the intersection points of \phi_{t}(M) and M and the connecting paths swipe out strips with boundaries on the two submanifolds - complex for any pair of Lagrangian
+submanifolds that intersect normally -  Floer needed a (almost)-complex structure on M to define his strips as (pseudo)-holomorphic disks, but ultimately the homology of
+his complex only depended on the symplectic topology of the space and the Lagrangian submanifolds - Moreover the homology did not change under Hamiltion flows of the La-
+grangian submanifolds, so it only depended on the Hamiltonian isotopy classes of the submanifolds - gets linked with fixed point theory(any Hamiltonian map of a
+manifold M onto itself has at least as many fixed points as the sum of the Betti numbers of M.)
+
+A New beginning(1 ref - A mini-course on topological strings by Marcel Vonk)
+superstring - A manifold has lot of structure (Calabi Yau, symplectic, complex)
+A-model(symplectic structure) - forget the other structure.
+B-model(complex structure)
+calculations in A model M = calculations in B model M'(mirror manifold since Hodge numbers reversed)
+
+these ideas led to conjecture a formula that counted the number of curves of any degree in the quintic threefold.
+Physicist version (A pair of calabi-yau manifolds as
+an exactly soluble superconformal theory)
+Maths version(Givental-Equivariant Gromov-Witten invariants, (probably more detailed) Yau- Mirror principle:A survey)
+
+Mirror symmetry (Homological algebra of mirror symmetry)
+For each pair of Lagrangian submanifolds in M there should exist a pair of
+0sheaves on the mirror M' such that the Floer homology of the Lagrangians is isomorphic
+to the sheaf homology between the two sheaves - actually complexes of Lagrangian and sheaves.
+Fukaya category = Dcoh(derived category of coherent sheaves)
+3 ref
+Derived categories, a skimming - Caldamaru
+symplectic progolemon
+Meet hom mirror symmetry- Baldard
+
+
+Alexander Polishchuk and Eric Zaslow. Categorical mirror symmetry in the elliptic curve
+Torus(symplectic)                                 -                    Torus(elliptic curve)
+Lagrangian submanifolds are            -         a and b correspond to degree and rank on elliptic curve
+closed curves on torus
+(a,b) where a and b are integers
+(closed curves)
+
+
+
+Derived Category
+Let A be an abelian category
+Let K be the category of chain complexes with objects in A upto chain homotopy of complexes
+If you invert the quasimorphisms(with ideas from localization). this becomes the derived category.
+Important results : 1)quasimorphisms between complexes of injective objects are homotopy equivalence.
+2) we can get injective resolutions in case it is a bounded category
+
+
+
+
+
+
+
+
+
+
+
+Obstruction theory
+Let E be a n-vector bundle, k sections exist over m-skeleton, does it extend to the m+1 skeleton??
+take a m-cell, we have k sections on the boundary i.e. we have a map
+S^{m-1} \to V(k,n) [pulling back E to be a trivial bundle. So we get an element of $\pi_{m-1}(V(k,n))$ which is the obstruction: if this goes to 0, the k section extends, hence we get a  map $H^{m}(M,\pi_{m-1}(V(k,n)))$.
+
+
+
+chern classes(Own work)
+What is a k-chern class? We want to understand the obstruction to finding k-linearly independant sections of a n-complex vector bundle E over a m-manifold M. Now, suppose we have a (k-1) linearly independant sections whose image is Y in E, and another section s: M $\to$ E. We want to find the transversal intersection of s and Y. So the preimage is s^{-1}(Y) whose codimension = (2n-2k+2) [by tranversality theorem : Guillemin Pollack pg 28).
+
+Now,  the preimage might contain multiplicities, to compute that we follow a standard procedure : we take (2n-2k+2) ball 'orthogonal' to the preimage at a point p in the preimage. We take the (2n-2k+1) sphere, in  this we have a section s linearly independant to Y in E. So s takes image in a 2n-(2k-2) dimensional space(E/Y) = in a 2n-2k+1 sphere(after normalization). So the degree of this map s exactly represents the obstruction theory defn: i.e. it sends this 2n-2k+2 ball to the degree and hence is the n-k+1 Chern class.
+
+Understanding : s is 0 at the centre , and non zero  on a sphere. By normalization , we get a map from sphere to sphere. If degree is 0, that means it can be extended to the whole ball and get a non zero value at the centre. This is how winding no. represents an obstruction)
+
+From this it also follows that chern classes are poincare dual to the degeneracy locis
+
+Chern Class(Curvature)
+n-k+1 Chern Class represents how much the volume gets mapped = det(ds_{x}) 
+Let k = n-1 so we compute 2-chern class=
+det(4X4) matrix = 
+det(A 0
+    0 B) , by linear algebra : we arrange planes P1, P2 such that P1 gets mapped to P1, P2 gets mapped to P2 under s , hence 
+  = det(c1 0
+        0 c2) = c1 \wedge c2. 
+
+Grassmannian and Formulas
+
+
+
+
+
+
+
+
+
+
+
+
