@@ -1,0 +1,318 @@
+\documentclass[psamsfonts]{amsart}
+
+%-------Packages---------
+\usepackage{amssymb,amsfonts}
+\usepackage[all,arc]{xy}
+\usepackage{enumerate}
+\usepackage{mathrsfs}
+\usepackage{tikz-cd}
+\usepackage{upgreek}
+\usepackage{hyperref}
+\usepackage{cleveref}
+%--------Theorem Environments--------
+%theoremstyle{plain} --- default
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{quest}[thm]{Question}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{defns}[thm]{Definitions}
+\newtheorem{con}[thm]{Construction}
+\newtheorem{exmp}[thm]{Example}
+\newtheorem{exmps}[thm]{Examples}
+\newtheorem{notn}[thm]{Notation}
+\newtheorem{notns}[thm]{Notations}
+\newtheorem{addm}[thm]{Addendum}
+\newtheorem{exer}[thm]{Exercise}
+
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{rems}[thm]{Remarks}
+\newtheorem{warn}[thm]{Warning}
+\newtheorem{sch}[thm]{Scholium}
+
+\newcommand{\vs}{\vspace{0.25mm}}
+
+\makeatletter
+\let\c@equation\c@thm
+\makeatother
+\numberwithin{equation}{section}
+
+\bibliographystyle{plain}
+
+%--------Meta Data: Fill in your info------
+\title{Research Diaries 1}
+
+\author{Sayantan Roy Chowdhury}
+
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+\section{Motivations}
+The motivations are manifold. We want  to capture several facts about curvature in this article. We will start by analysing how  we can make the 'curvature' of plane curves precise.
+\subsection{Convention}
+To quantize the notion , we need to define a model space where the curvature is +1. By way of convention, we choose this to be $S^{n}$.
+\subsection{Curves} 
+We parameterize the curve M such that the tangent vectors are of unit length. We define the 'Gauss' map : 
+\[   g : M \to S^{1} \]
+\[   g(x) = \dot{\gamma}(x) \]
+For p $\in$ M , and a ball $B_{r}(p)$ $\subset$ M, we define
+\[ \kappa(p) =  \lim_{r \to 0} \dfrac{\text{Volume of } g(B_{r}(p))}{\text{Volume of }B_{r}(p)}  \] 
+This captures the infinitesmall change in angle of the tangent vector at point p and hence curvature in keeping with our convention. Whatever
+this defination gains in motivation , loses in rigour. However, we can rectify this easily :
+\[ \kappa(p) = det(dg_{p}) \]
+We leave it for the reader to 'check' that this is a correct mathematical model. And voila, we have recovered
+\[\kappa(p) = \| \ddot{\gamma} \| \] 
+We invite the reader to check that the curvature of circle of radius r is $\dfrac{1}{r}$ using both the definations.
+
+
+
+
+
+\subsection{Curves Embedded in a Surface embeddded in $\Re^{3}$ } 
+Let $\gamma$ be a curve embedded in a surface M in $\Re^{3}$ . 
+We define the geodesic curvature of the curve :
+\[ \kappa_{g}(p) = \text{Proj}_{T_{p}(M)}\kappa(p)\]  
+Let w be a point particle constrained to move on the surface. Then the path it traces out in the absence of an unbalanced force is the geodesic.
+\subsection{Curvature of a surface}
+Let M be a  surface embedded in $\Re^{3}$.We attempt to replicate the defination of curvature as in the case of curve:\\
+We first define the 'Gauss' map : 
+\[   g : M \to S^{2} \]
+\[   g(x) = \text{normal vector to M at x}  \]
+For p $\in$ M , and a ball $B_{r}(p)$ $\subset$ M, we define
+\[ \kappa(p) =  \lim_{r \to 0} \dfrac{\text{Volume of } g(B_{r}(p))}{\text{Volume of }B_{r}(p)}  \] 
+And similarly as above 
+\[K(p) = \| \det(dg_{p}) \| \]
+\subsection{Parallel Transport}
+We define parallel transport along a curve $\gamma$ as :
+\[ \dot{\theta} = \kappa_{g}(p)                          \]
+where $\theta$ is the angle between the vector and $\dot{\gamma}$ 
+\paragraph{}
+An alternate definition of the parallel transport is : it is a curve 
+\[ s: [0,1] \to TM \]
+\[ s((t)) \in T_{\gamma(t)}M \]
+\[ \text{Proj}_{T_{\gamma(t)}(M)}(\dot{s}) = 0 \]
+The two definition are related as follows :
+$\theta(t)$ = angle between s(t) and $\dot{\gamma}$ .
+\[ \cos(\theta(t)) = \langle s(t), \dot{\gamma}(t)\rangle \text{since these are unit length vectors}                         \]
+\[  sin(\theta(t))\dot{\theta}(t) = \langle s(t), \ddot{\gamma}(t)  \rangle \text{since $\dot{s}$ is perpendicular to tangent plane } \]
+Now $\kappa_{g}$ is projection of $\ddot{\gamma}$ along the tangent plane whose normal vector is along $\dot{s}(t)$. So
+\[ \kappa_{g} = \ddot{\gamma}(t) - \langle \ddot{\gamma}(t) , \dot{s}(t) \rangle \dot{s}(t) \] 
+\[ \| \kappa_{g} \| = \|\ddot{\gamma}(t)\|\sin(\phi) \text{where $\phi$ is the angle between $\dot{s}(t)$ and $\ddot{\gamma}(t)$ } 
+\]
+\[ \langle s(t), \ddot{\gamma}(t) \rangle =  \|\ddot{\gamma}(t)\|\sin(\phi)sin(\theta)                          \]
+\section{Gauss map and the holonomy }
+We use the "maths" convention of the spherical coordinates . For a sphere this result is quite clear. We can check on a parallel circle at angle $\phi$ the holonomy is $2\pi(1-\sin(\phi))$ . Hence the holonomy form is $(1 - \sin(\phi))d\theta$ . 
+\paragraph{}
+Now we check that the area form on a sphere is $\cos(\phi)d\theta d\phi$ . Hence we have by stokes theorem :
+\[ \int K dA = \text{area of image of gauss map} = \int \kappa_{g} \text{on sphere} = \int \kappa_{g} = \int \dot{\theta} = \theta(1) - \theta(0) \]  
+
+
+\section{Derivative of tensor}
+We first define how to derive a tensor
+\[\nabla(T(v_{1},v_{2} .... v_{i},...v_{n})) = \nabla(T)(v_{1},v_{2} .... v_{i},...v_{n}) + T(\nabla v_{1},v_{2} .... v_{i},...v_{n}) + T(v_{1},\nabla v_{2} .... v_{i},...v_{n}) ... + T(v_{1},v_{2} .... \nabla v_{i},...v_{n}) ..... + T(v_{1},v_{2} .... v_{i},...\nabla v_{n}) \]
+A similar formula is true for lie derivative as well \\
+
+
+
+Let g($\langle , \rangle$) be a Riemannian metric and $\nabla$ be the corresponding Levi Civita Connection. then we have the following interesting formula for the lie derivative :
+\[  (L_{X}g)(Y,Z) = \langle \nabla_{Y}X ,Z \rangle  +\langle Y ,\nabla_{Z}X \rangle                                        \]
+
+\paragraph{}
+\paragraph{}
+
+
+
+
+
+\section{Sheaves}
+
+
+A PreSheaf is a contravariant functor from the category of open sets(with inclusion as morphisms) in a topological space X to the category of some objects \\
+Sheafification is the process of identifying the presheaves locally equal to each other and then adding sheaves which locally look like some of the presheaves
+\section{Proj and Grass}
+
+The manifold structure of the Projective space $\mathbb{P}^{1}$ is given in the following way: we fix a line x=1 . Let $U_{x}$ be the open set consisting of all lines that is not parallel to this line. Hence we could parameterise this lines with their intersection with the line x=1.Hence this gives us a chart to $\mathbb{C}$.In particular they are parameterised by (1,y) $\to$ y where y $\in$ $\mathbb{C}$ \\
+Now we try to give the cell structure to the Grassmannian G(k,n) as well . We can consider the set of all k-planes $\Lambda$ intersecting a fixed n-k plane generically however that wont parameterize the k-plane . We would need k no. of (n-k) planes for that .(since they would intersect in a point and hence determine a line through origin contained in k . We need k such lines to determine a k-plane $\Lambda$. Hence let $H_{1},H_{2} ..... H_{k}$ be k (n-k)-planes. Then we consider an open set U = k-planes $\Lambda$ that intersects this planes generically. Hence this set can be parameterised by this k-intersection points and hence has a bijection to $\mathbb{C}^{k(n-k)}$.\\
+Now we can parameterise the k-plane $\Lambda$ by a (k $\times$ n ) matrix whose rows span $\Lambda$. 
+ 
+ \section{Exterior Derivatives}
+ We first have the following formula for the exterior derivative of differential forms 
+ \[   d\omega(X,Y) = X(\omega(Y)) - Y(\omega(X)) - \omega([X,Y])                               \]
+ which can be explained quite clearly using the definition of d$\omega$ as (where $\omega$ is a k-form ):
+ \[                   d\omega(v_1,v_2,...v_k,v_{k+1}) = \lim_{t_j \to 0}\dfrac{1}{t_1t_2 \dots t_{k+1}}\int_{bP_t} \omega \]
+ where $bP_{t}$ is the oriented boundary of the parallelopiped formed by $v_{i}$ as edges .\\
+ Using this we see that d$\omega$(X,Y) at a point is integration of $\omega$ on an infinitesmall parallelopiped formed by X and Y . Now , difference in $\omega$ on the two parallel X edges is given by $Y(\omega(X))$ and similarly $X(\omega(Y))$ on the two parallel Y-edges and the parallelogram might not close up , thats why we need to add $\omega([X,Y])$ term .\\
+ Arguing in the same way we have the generalised invariant formula :
+ \[      d\omega (V_{0},...,V_{k})=\sum _{i}(-1)^{i}V_{i}\left(\omega \left(V_{0},\ldots ,{\hat {V}}_{i},\ldots ,V_{k}\right)\right)+\sum _{i < j}(-1)^{i+j}\omega \left(\left[V_{i},V_{j}\right],V_{0},\ldots ,{\hat {V}}_{i},\ldots ,{\hat {V}}_{j},\ldots ,V_{k}\right)                       \]  
+ \section{Parallel Transport and curvatures}
+ The connection here represents the derivative of the parallel transport
+ i.e. Let$ P^{t}_{\gamma}$ be the Parallel transport for time t on path $\gamma$. Then we have that :
+ \[\nabla_{u}v  = \lim_{t \to 0}\tfrac{P^{-t}_{\gamma}(v(\gamma(t))) -v(\gamma(0))}{t} \] 
+ where $\gamma(t)$ is the integral curve of the vector field u. \\
+ The Riemannian curvature is generally given by the following formula :
+\[       R(u,v)w = \nabla_{v}\nabla_{u}w - \nabla_{u}\nabla_{v}w -\nabla_{[u,v]}w                           \] 
+This can be understood the same way as we did with the invariant formulation of the exterior derivative - This gives the limit of the holonomy of w on the boundary of parallelopiped formed by the vectors u and v . \\
+Now as explained in the char class document - the holonomy on the boundary is related with the integration of the Gaussian curvature on a surface by some form of a stokes theorem . We will see the relation in form of the sectional curvature . \\
+First we note that R(u,v)w  is perpendicular to w(when connection is compatible with the metric) . In particular $\langle R(u,v)w , w \rangle$ = 0 .The proof goes as follows :
+\[       2 \langle R(v,u)w , w \rangle = V(U(\langle w , w \rangle )) - U(V(\langle w , w \rangle )) - [U,V](\langle w , w \rangle )  = 0       \] 
+In particular the holonomy angle is perpendicular to w as the limit approaches 0. Hence we can also write
+\[     R(u,v)w = -KdA(u,v) (J_{0}w)                   \]
+where K is the gaussian curvature . and limit of the integration of K over a surface is clearly KdA where dA is the area form .
+In particular
+\[ \|\langle R(x,y)x,y \rangle\| = KdA(x,y)\|x\|\|y\|\sin(\theta)  \]
+where $\theta$ is the angle between x and y .
+\[ K = \dfrac{\|\langle R(x,y)x,y \rangle\|}{\|x \times y \|^{2}}\]
+We can generalise this notion for higher dimensional manifolds in a
+ similar way \\
+ Let M be a manifold . x is a point of M . Let u and v be two linearly independent vectors of $T_{x}M$ . We define the sectional curvature 
+ \[  K(\sigma) = \dfrac{\|\langle R(u,v)u,v \rangle\|}{\|u \times v \|^{2}}                                              \] 
+where $\sigma$ is the plane spanned by u and v . Hence this can be also seen as the sectional curvature of the local surface (formed by the exp map on $T_{x}M$) whose tangent space at point x is $\sigma$ . \\
+Now we describe the other two forms of curvature on a manifold . let $\xi$ be an unit vector :
+\[ Ric_{p}(\xi , \xi ) =   \dfrac{\sum_{i}\langle R(\xi , e_{i})\xi , e_{i}\rangle}{n-1}                                     \]
+where $e_{i}$ is the orthonormal basis of the hyperplane perpendicular to $\xi$ .Hence this is the average of sectional curvatures of all the planes containing $\xi$ . In normal coordiantes, this measures the deviation of the volume form. In particular The normal coordinates is :
+\[   g_{ij}=\delta _{ij}+O\left(|x|^{2}\right)   \]
+So the metric is given by 
+\[    g_{ij}=\delta _{ij}-{\tfrac {1}{3}}R_{ikjl}x^{k}x^{l}+O\left(|x|^{3}\right)               \]
+Now sine the volume form is $\sqrt{det (g_{ij})}$ we have :
+\[ d\mu _{g}=\left[1-{\tfrac {1}{6}}R_{jk}x^{j}x^{k}+O\left(|x|^{3}\right)\right]d\mu _{\rm {Euclidean}}                 \]
+Thus, if the Ricci curvature Ric(ξ,ξ) is positive in the direction of a vector ξ, the conical region in M swept out by a tightly focused family of geodesic segments of length $ \varepsilon$  emanating from p, with initial velocity inside a small cone about ξ, will have smaller volume than the corresponding conical region in Euclidean space, at least provided that $ \varepsilon $  is sufficiently small. Similarly, if the Ricci curvature is negative in the direction of a given vector $\xi$, such a conical region in the manifold will instead have larger volume than it would in Euclidean space. (Read the Global Geometry topology part on wikipedia)\\
+We also have this in normal coordinates from the above
+\[       R_{ij}=-{\tfrac {2}{3}}\Delta \left(g_{ij}\right)              \] 
+Also when a manifold is a hypersurface embedded in an Euclidean space , The principal directions of the hypersurface are the eigendirections of the Ricci tensor.\\ \\
+The scalar curvature, in normal coordinates measures the deviation of volume of the geodesic balls .
+\[       K(p) = \dfrac{\sum Ric_{p}(e_{i})}{n}                           \]
+And in normal coordinates we hae the following 2 expressions :
+\[               \frac {\text{Vol} (B_{\varepsilon }(p)\subset M)}{\text{Vol} (B_{\varepsilon }(0)\subset {\mathbb {R} }^{n})}=1-\frac {S}{6(n+2)}\varepsilon ^{2}+O(\varepsilon ^{4}).                    \]
+And for the (n-1) balls in their boundary
+\[{\frac {\text {Area} (\partial B_{\varepsilon }(p)\subset M)}{\text {Area} (\partial B_{\varepsilon }(0)\subset {\mathbb {R} }^{n})}}=1-{\frac {S}{6n}}\varepsilon ^{2}+O(\varepsilon ^{4})
+\]
+\section{Connections and Curvatures over vector bundles}
+
+Now we consider a vector bundle E over a manifold M . p $\in$ M and let X be a direction in $T_{p}M$ , s be a section of E. Then we want  to differentiate s in the direction X. The obvious choice is to take the vector $s_{*}(X)$ . However this is an element of TE whereas we want an element of E.  Now the tangent space of a fibre is the vector space itself(Call this bundle VE) . So we want a decomposition 
+\[            TE = VE \oplus HE                       \]    
+where HE is the horizontal space. In particular we want a splitting of the following exact sequence 
+\[      0 \rightarrow ker(\pi_{*}) \rightarrow TE \rightarrow \pi^{*}TM \rightarrow 0                                    \]
+
+
+ Now we want to define the same concepts of parallel transport in this case. Let $P^{t}_{\gamma}$ be the parallel transport - Then it must independent of the choice of the integral curve and must be linear .
+                     
+
+
+\[       d_{\nabla}^{2} (s) =   F_{\nabla}(s)                           \]
+where $F_{\nabla}$ is an End(E) valued 2-form 
+
+
+There are a multiple ways of defining curvature .A is the connection which gives us the splitting. 
+\begin{enumerate}
+	\item R(X,Y)v - This is a End(E) valued 2 form on M
+	\item  $-A([X_{h},Y_{h}])v$ this is also End(E) valued 2 form on M where $X_{h}$ and $Y_{h}$ are the horizontal lifts . 
+	\item $d_{\nabla}A$($X_{h}$,$Y_{h}$) where A is considered as a E-valued 1-form on TE. maybe this is equal to $d{\nabla}$(A) anyway.
+	\item dA($X_{h}$,$Y_{h}$)
+	\item dA + $\dfrac{A \wedge_{[,]_{E}} A}{2}$ . This gives an E-valued 2 form on TE . Now this is basic i.e. if under the identification TE = TM $\oplus$ E . this is  a map from TM $\to$ (E $\to$ E)
+	\item $d_{\nabla}^{2}$(s) where s is a section of E . In particular. if in local coordinates where $\{s_{i}\}$ are the frames : 
+	\[     d_{\nabla}(s_{i}) = \sum_{i} \omega_{ij} \otimes s_{j}                                    \]
+	Then , we have 
+	\[     d_{\nabla}^{2}(s_{i}) =                                   \sum_{j} d\omega_{ij} \otimes s_{j} + \omega_{ij} \otimes d_{\nabla} s_{j} 
+	= \sum _{k} (d\omega_{ik} + \sum_{j} \omega_{ij} \wedge \omega_{jk}) \otimes s_{k}         \]
+\end{enumerate}
+
+
+
+
+
+characteristic class as obstruction theory
+poincare hopf - lefschetz fixed point theorem = lefchetz no is the intersection number of the graph of the function and diagonal in X $\times$ X = euler characteristic of the fixed point set.\\ 
+euler characteristic = self intersection number of a space
+
+
+
+
+
+\section{Vector bundle theory}
+I woul like to document some facts about the vector bundle over here which I would like to use over and over .
+\begin{enumerate}
+	\item $f_{0}$ $\sim_{homotopy}$ $f_{1}$ $\Rightarrow$ $f_{0}^{*}(E)$ $\cong$ $f_{1}^{*}(E)$
+	\item f : X $\to$ Y is a homotopy equivalence $\Rightarrow$ $f^{*}$ : Vect(Y) $\to$ Vect(X) is a bijection
+	\item Suppose Y $\subset$ X closed , E is a vector bundle over X . Let $\alpha$ be a trivilization of $E|_{Y}$ . then $E/\alpha$ is a vector bundle over X/Y .
+	\item If Y is contractible , then f : X $\to$ X/Y induces a bijection $f^{*}$ : Vect(X/Y) $\to$ Vect(X)
+	\item Any exact sequence of vector bundles split
+	\item If E is a vector bundle , there exists a vector bundle G such that E $\oplus$ G is a trivial vector bundle.
+	\item $Vect_{n}(X)$ $\cong$ $\lim_{m \to \infty}[X,,Gr_{n}(\mathbb{C}^{m})]$ 
+	\item Replacing everything in 1 by (G-) works   
+\end{enumerate} 
+\begin{defn}
+	Let A be a semigroup . then A $\xrightarrow{\alpha}$ K(A) is called the Grothendieck group of A if for all homomorphism A $\xrightarrow{b}$ $\exists$ an unique homomorphism K(A) $\xrightarrow{c}$ such that the following diagram commutes 
+	\[
+	\begin{tikzcd}
+	A \arrow{r}{\alpha} \arrow{d}{b} & K(A) \arrow[ld,dashed,"c"] \\
+	G
+	\end{tikzcd}
+	\]
+	
+\end{defn}
+\section{K-theory}
+In the next few sections we will see how to construct K(A). For a space X , K(X) denotes the Grothendieck group of the Vect(X) . 
+\section{Rrincipal Bundles}
+Let $\pi$ : P $\to$ M be a principal bundle .
+We have the following G-exact sequence :
+\begin{equation}\label{principal connection}
+	0 \rightarrow ker(\pi_{*})  \rightarrow TP \xrightarrow{\pi_{*}}  \pi^{*}TM \rightarrow 0                  
+\end{equation}
+\textbf{$ker(\pi_{*})$} \\                           
+$ker(\pi_{*})$ is the vertical part of the bundle (= G) , since it goes to the same point under p.The action of G is just $(m_{g})_{*}$ where $m_{g}$ is just the action of G on P. Also
+\[ ker(\pi_{*}) = P \times lie(G) \]
+\[ (p,m) \xrightarrow{\psi} \partial_{t}(pe^{tm})\vert_{t=0}\]
+Note that 
+\[(m_{g})_{*}(\psi(p,m)) = \psi(pg^{-1} , Ad(g)m) \]
+where Ad(g) = $(ad(g))_{*}$ on  lie(G) and in particular $gxg^{-1}$ on matrix groups(This is akin to using $gxg^{-1}$ when we change the basis by gx.)
+\\
+\textbf{$\pi^{*}TM$}  \\
+This is the horizontal part of the bundle and the action on it is clear when it is considered as subbundle of P $\times$ TM. 
+\\
+A connection A on the principal bundle is just a G-equivariant splitting of \cref{principal connection}. It can be treated in the following two ways.
+\begin{enumerate}
+	\item A G-equivariant map A : TP $\to$ P $\times$ lie(G) such that it is identity o the vertical part.
+	\item A identifies $\pi^{*}TM$ as a subbundle of TP : the horizontal bundle $H_{A}$ = ker(A) . G-equivariance implies $(m_{g})_{*}(H_{A})$ = $H_{A}$. Hence for each vector v $\in$ $TM_{x}$, we get $v_{A}$ $\in$ $TP_{(x,g)}$ such that 
+	\[ \pi_{*}(v_{A}) = v \]
+	i.e. we can horizontally list tangent vectors to TP now
+\end{enumerate}
+\section{Principal Bundles, Connections and Curvature}
+Principal bundles are akin to the notion of symmetry that we use i group theory. On the otherhand ,let $\rho$ : G $\to$ $GL(V)$ be a repn of G in V. we could see P $\times_{\rho}$ V as associating to each point of X a vector space V and the role of G(as a subgroup of GL(V)-the symmetry group of V) is to identify different ways of looking at V .\\
+One of the importance of this approach is that G can act as a symmetry group of a lot of vector spaces just by changing the representation.
+\[ P \times_{\rho} V = P \times V / \sim \text{ where } (p,v) \sim (pg^{-1},\rho(g)v) \] 
+\newpage
+\vspace{7mm} 
+\begin{center}
+	\begin{tabular}{ | p{9 cm} | p{9cm} |}
+		\hline\hline
+		\vspace{0.25mm}
+		Principal bundle P  & \vspace{0.25mm} Associated bundle P $\times_{\rho}V$ \\ [1ex] \hline
+		
+		
+		\vs $s^{P}$ : P $\to$ V , G-equivariant .\newline
+		Hence associates to each point a vector(since P $\times_{\rho}$ V is just associating V to each point). The G-equivariance ensures it goes to the same vector under different identifications  & \vs A section s of P $\times_{\rho}$ V \\ [1ex] \hline
+		
+		
+		\vs $s^{P}$ : $\pi^{*}E^{*}$ $\to$ V ,fiberwise linear , G-equivariant  & \vs A section s of P $\times_{\rho}$ V $\otimes$ E where E is a vector bundle. \\ [1ex]
+		\hline
+		
+		\vs connection A : TP $\to$ lie(G) , G-equivariant , also helps to lift vector fields   & \vs covariant derivative $\Delta_{A}$ : $C^{\infty}(E)$ $\to$ $C^{\infty}(E)$ $\otimes$ $T^{*}(M)$ (linear + Leibnitz) .  \newline
+		$\Delta_{A}(s)(v)$ =  $s_{*}(v_{A})$                          
+		\\ [1ex]
+		\hline
+	\end{tabular}
+\end{center}
+
+
+
+
+
+
+\end{document}
